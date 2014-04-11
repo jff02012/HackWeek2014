@@ -47,7 +47,7 @@ def ratings(major, number):
     avg_rating = None
     #Once we have the reviews fimd the average rating for the course 
     if len(reviews) !=0:
-        ratings_sum = sum(int([r.get('rating', 0)) for r in reviews])
+        ratings_sum = sum(int([r.get('rating', 0) for r in reviews]))
         avg_rating = float(ratings_sum) / len(reviews)
         avg_rating = round(avg_rating, 2)
     return render_template("ratings.html", course=course, avg_rating=avg_rating,
